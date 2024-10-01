@@ -37,7 +37,7 @@ class BrandResource extends Resource
     {
         return $form
             ->schema([
-               Section::make([
+                Section::make([
                     Grid::make()
                         ->schema([
                             TextInput::make('name')

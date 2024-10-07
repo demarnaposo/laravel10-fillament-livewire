@@ -16,6 +16,8 @@ class LatestOrders extends BaseWidget
 
     protected int | string | array $columnSpan = 'full';
 
+    protected static ?int $sort = 2;
+
     public function table(Table $table): Table
     {
         return $table
@@ -44,11 +46,11 @@ class LatestOrders extends BaseWidget
                         'Canceled'      => 'danger'
                     })
                     ->icon(fn(string $state): string => match ($state) {
-                        'New' => 'heroicon-m-sparkles',
-                        'Processing' => 'heroicon-m-arrow-path',
-                        'Shipped' => 'heroicon-m-truck',
-                        'Delivered' => 'heroicon-m-check-badge',
-                        'Canceled' => 'heroicon-m-x-circle',
+                        'New'           => 'heroicon-m-sparkles',
+                        'Processing'    => 'heroicon-m-arrow-path',
+                        'Shipped'       => 'heroicon-m-truck',
+                        'Delivered'     => 'heroicon-m-check-badge',
+                        'Canceled'      => 'heroicon-m-x-circle',
                     })
                     ->sortable(),
 
